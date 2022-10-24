@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: rgb(111, 6, 6);
+}
+a {
+  text-decoration: none;
+  color: #0daf18;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+a:hover {
+  color: #0150b0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(166, 31, 112);
+}
+
+.login-style {
+  width: 150%;
+  height: 35px;
+}
+.logout-style {
+  width: 100;
+  height: 30px;
+}
+.site-name {
+  text-align: center;
+  color: #0daf18;
+  background-color: bisque;
+}
