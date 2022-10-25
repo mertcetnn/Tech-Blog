@@ -4,7 +4,9 @@ const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // GET all galleries for homepage
+
 router.get("/", async (req, res) => {
+  console.log("test");
   try {
     const dbMainData = await Post.findAll({
       attributes: ["id", "title", "content", "created_at"],
