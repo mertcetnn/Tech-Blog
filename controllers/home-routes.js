@@ -3,8 +3,6 @@ const { User, Post, Comment } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
-// GET all galleries for homepage
-
 router.get("/", async (req, res) => {
   console.log("test");
   try {
@@ -44,8 +42,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET one gallery
-// Use the custom middleware before allowing the user to access the gallery
 router.get("/post/:id", withAuth, async (req, res) => {
   try {
     const dbMainData = await post.findByPk(req.params.id, {
