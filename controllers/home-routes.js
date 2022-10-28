@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
           model: Comment,
           attributes: [
             "id",
-            "comment_text",
+            "user_comment",
             "post_id",
             "user_id",
             "created_at",
@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
 
     const posts = dbMainData.map((post) => post.get({ plain: true }));
 
-    res.render("homepage", {
+    res.render("second", {
       posts,
       loggedIn: req.session.loggedIn,
     });
@@ -53,7 +53,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
               model: Comment,
               attributes: [
                 "id",
-                "comment_text",
+                "user_comment",
                 "post_id",
                 "user_id",
                 "created_at",
