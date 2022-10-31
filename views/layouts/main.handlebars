@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Blog</title>
-    <link rel="stylesheet" href="./public/style.css" />
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <header>
-        <nav class="navbar">
-          <h1 class="home-h1">
-            <a href="/">Home</a>
-          </h1>
-           
-          {{#if loggedIn}}
-          <h1>
-            <a href="/dashboard">Dashboard</a>
-          </h1>
-          <button id="logout" class="logout-style">Log-out</button>
-          {{else}}
-          <h1>
-            <button id="login" class="login-style">Login</button>
-          </h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
 
-          {{/if}}
-        </nav>
-      </header>
-      <div class="site-row">
-        <div class="site-name">
-          <h1>Tech Blog</h1>
-        </div>
-      </div>
-      <main>{{{ body }}}</main>
-    </div>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Tech Blog</a>
+      </h1>
+      <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard"><span class="glyphicon glyphicon-user"></span>{{ username }}'s Dashboard</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
 
-  </body>
+</body>
+
 </html>
+
+{{#if loggedIn}}
+<script src=""></script>
+{{/if}}
